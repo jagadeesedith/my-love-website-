@@ -1,0 +1,939 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Romantic Pink/Red Theme */
+    --background: 340 100% 97%;
+    --foreground: 340 50% 20%;
+    --card: 340 100% 98%;
+    --card-foreground: 340 50% 20%;
+    --popover: 340 100% 98%;
+    --popover-foreground: 340 50% 20%;
+    --primary: 340 80% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 340 60% 92%;
+    --secondary-foreground: 340 50% 25%;
+    --muted: 340 40% 94%;
+    --muted-foreground: 340 30% 45%;
+    --accent: 350 90% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 340 50% 88%;
+    --input: 340 50% 90%;
+    --ring: 340 80% 55%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Premium handwritten fonts */
+.font-handwritten {
+  font-family: 'Dancing Script', cursive;
+}
+
+.font-elegant {
+  font-family: 'Great Vibes', cursive;
+}
+
+/* Enhanced Glassmorphism effects */
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.glass-dark {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.glass-premium {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 8px 32px rgba(255, 107, 157, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* ============================================
+   ENHANCED FLOATING ANIMATIONS
+   ============================================ */
+
+@keyframes float-up {
+  0% {
+    transform: translateY(100vh) scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes float-side {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(30px);
+  }
+}
+
+@keyframes float-3d {
+  0%, 100% {
+    transform: translateY(0) translateZ(0) rotateX(0);
+  }
+  25% {
+    transform: translateY(-15px) translateZ(20px) rotateX(5deg);
+  }
+  50% {
+    transform: translateY(-25px) translateZ(40px) rotateX(0);
+  }
+  75% {
+    transform: translateY(-15px) translateZ(20px) rotateX(-5deg);
+  }
+}
+
+@keyframes float-orbit {
+  0% {
+    transform: rotate(0deg) translateX(50px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(50px) rotate(-360deg);
+  }
+}
+
+@keyframes pulse-heart {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 107, 157, 0.4),
+                0 0 40px rgba(255, 107, 157, 0.2),
+                0 0 60px rgba(255, 107, 157, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 107, 157, 0.6),
+                0 0 60px rgba(255, 107, 157, 0.4),
+                0 0 90px rgba(255, 107, 157, 0.2);
+  }
+}
+
+/* ============================================
+   FADE & REVEAL ANIMATIONS
+   ============================================ */
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-scale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in-rotate {
+  0% {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+/* ============================================
+   3D TRANSFORM ANIMATIONS
+   ============================================ */
+
+@keyframes flip-in-x {
+  0% {
+    opacity: 0;
+    transform: perspective(400px) rotateX(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(400px) rotateX(0);
+  }
+}
+
+@keyframes flip-in-y {
+  0% {
+    opacity: 0;
+    transform: perspective(400px) rotateY(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(400px) rotateY(0);
+  }
+}
+
+@keyframes card-flip {
+  0% {
+    transform: rotateY(0);
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
+}
+
+@keyframes swing {
+  0%, 100% {
+    transform: rotate(0);
+  }
+  20% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+}
+
+@keyframes wobble {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(-25px) rotate(-5deg);
+  }
+  30% {
+    transform: translateX(20px) rotate(3deg);
+  }
+  45% {
+    transform: translateX(-15px) rotate(-3deg);
+  }
+  60% {
+    transform: translateX(10px) rotate(2deg);
+  }
+  75% {
+    transform: translateX(-5px) rotate(-1deg);
+  }
+}
+
+/* ============================================
+   SHIMMER & GRADIENT ANIMATIONS
+   ============================================ */
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ============================================
+   MORPHING & SHAPE ANIMATIONS
+   ============================================ */
+
+@keyframes morph {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+}
+
+@keyframes blob {
+  0%, 100% {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: translate(20px, -20px) rotate(5deg);
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    transform: translate(-10px, 10px) rotate(-5deg);
+  }
+  75% {
+    border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+    transform: translate(10px, -10px) rotate(3deg);
+  }
+}
+
+/* ============================================
+   CONFETTI & PARTICLE ANIMATIONS
+   ============================================ */
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100%) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes confetti-pop {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty)) scale(0) rotate(var(--rot));
+    opacity: 0;
+  }
+}
+
+@keyframes particle-float {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translate(10px, -20px);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-5px, -40px);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translate(15px, -20px);
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   TEXT ANIMATIONS
+   ============================================ */
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  0%, 100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #ff6b9d;
+  }
+}
+
+@keyframes text-reveal {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes letter-spacing-expand {
+  0% {
+    letter-spacing: -5px;
+    opacity: 0;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.animate-float-up {
+  animation: float-up 4s ease-in-out infinite;
+}
+
+.animate-float-3d {
+  animation: float-3d 4s ease-in-out infinite;
+}
+
+.animate-float-orbit {
+  animation: float-orbit 8s linear infinite;
+}
+
+.animate-pulse-heart {
+  animation: pulse-heart 1.5s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-fade-in-down {
+  animation: fade-in-down 0.8s ease-out forwards;
+}
+
+.animate-fade-in-left {
+  animation: fade-in-left 0.8s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fade-in-right 0.8s ease-out forwards;
+}
+
+.animate-fade-in-scale {
+  animation: fade-in-scale 0.6s ease-out forwards;
+}
+
+.animate-flip-in-x {
+  animation: flip-in-x 0.8s ease-out forwards;
+}
+
+.animate-flip-in-y {
+  animation: flip-in-y 0.8s ease-out forwards;
+}
+
+.animate-swing {
+  animation: swing 1s ease-in-out;
+}
+
+.animate-wobble {
+  animation: wobble 1s ease-in-out;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+.animate-morph {
+  animation: morph 8s ease-in-out infinite;
+}
+
+.animate-blob {
+  animation: blob 10s ease-in-out infinite;
+}
+
+.animate-sparkle {
+  animation: sparkle 1s ease-in-out infinite;
+}
+
+/* ============================================
+   3D PERSPECTIVE UTILITIES
+   ============================================ */
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* ============================================
+   GRADIENT BACKGROUNDS
+   ============================================ */
+
+.bg-romantic-gradient {
+  background: linear-gradient(135deg, #ffeef8 0%, #ffd6e7 25%, #ffc4dd 50%, #ffb8d0 75%, #ff9eb5 100%);
+}
+
+.bg-romantic-gradient-animated {
+  background: linear-gradient(-45deg, #ffeef8, #ffd6e7, #ffc4dd, #ffb8d0, #ff9eb5, #ff85a2);
+  background-size: 400% 400%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.bg-soft-pink-gradient {
+  background: linear-gradient(180deg, #fff5f8 0%, #ffe8f0 50%, #ffd9e8 100%);
+}
+
+.bg-heart-gradient {
+  background: linear-gradient(135deg, #ff6b9d 0%, #ff85a2 50%, #ffb8d0 100%);
+}
+
+.bg-rainbow-pink {
+  background: linear-gradient(90deg, #ff9eb5, #ffb8d0, #ffc4dd, #ffd6e7, #ffeef8, #ffd6e7, #ffc4dd, #ffb8d0, #ff9eb5);
+  background-size: 200% 100%;
+  animation: gradient-shift 5s linear infinite;
+}
+
+/* ============================================
+   TIMELINE STYLES
+   ============================================ */
+
+.timeline-line {
+  background: linear-gradient(to bottom, #ff85a2, #ffb8d0, #ffd6e7, #ffeef8);
+}
+
+.timeline-line-glow {
+  background: linear-gradient(to bottom, #ff6b9d, #ff85a2, #ffb8d0);
+  box-shadow: 0 0 20px rgba(255, 107, 157, 0.5);
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, #ffe8f0, #ffd9e8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff85a2, #ffb8d0, #ff6b9d);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff6b9d, #ff85a2, #ff477e);
+}
+
+/* ============================================
+   PHOTO GALLERY EFFECTS
+   ============================================ */
+
+.gallery-item {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.gallery-item:hover {
+  transform: scale(1.08) rotateY(5deg) rotateX(5deg);
+  box-shadow: 
+    0 25px 50px -12px rgba(255, 107, 157, 0.4),
+    0 0 40px rgba(255, 107, 157, 0.2);
+}
+
+.gallery-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.5s;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.gallery-item:hover::before {
+  opacity: 1;
+}
+
+/* ============================================
+   BUTTON EFFECTS
+   ============================================ */
+
+.btn-glow {
+  position: relative;
+  box-shadow: 
+    0 0 20px rgba(255, 107, 157, 0.4),
+    0 0 40px rgba(255, 107, 157, 0.2),
+    0 0 60px rgba(255, 107, 157, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, #ff6b9d, #ff85a2, #ffb8d0, #ff6b9d);
+  background-size: 400% 400%;
+  border-radius: inherit;
+  z-index: -1;
+  animation: gradient-shift 3s ease infinite;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.btn-glow:hover {
+  box-shadow: 
+    0 0 30px rgba(255, 107, 157, 0.6),
+    0 0 60px rgba(255, 107, 157, 0.4),
+    0 0 90px rgba(255, 107, 157, 0.2);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.btn-glow:hover::before {
+  opacity: 1;
+}
+
+/* ============================================
+   HEART DECORATIONS
+   ============================================ */
+
+.heart-decoration {
+  position: relative;
+}
+
+.heart-decoration::before,
+.heart-decoration::after {
+  content: '❤️';
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.3;
+  animation: float-side 2s ease-in-out infinite;
+}
+
+.heart-decoration::before {
+  left: -2rem;
+  top: 0;
+}
+
+.heart-decoration::after {
+  right: -2rem;
+  top: 0;
+  animation-delay: 1s;
+}
+
+/* ============================================
+   POPUP OVERLAY
+   ============================================ */
+
+.popup-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+/* ============================================
+   SECTION REVEAL ANIMATIONS
+   ============================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(80px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-scale.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ============================================
+   STAGGER CHILDREN ANIMATIONS
+   ============================================ */
+
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.stagger-children.active > *:nth-child(1) { animation: fade-in-up 0.6s 0.1s forwards; }
+.stagger-children.active > *:nth-child(2) { animation: fade-in-up 0.6s 0.2s forwards; }
+.stagger-children.active > *:nth-child(3) { animation: fade-in-up 0.6s 0.3s forwards; }
+.stagger-children.active > *:nth-child(4) { animation: fade-in-up 0.6s 0.4s forwards; }
+.stagger-children.active > *:nth-child(5) { animation: fade-in-up 0.6s 0.5s forwards; }
+.stagger-children.active > *:nth-child(6) { animation: fade-in-up 0.6s 0.6s forwards; }
+
+/* ============================================
+   CONFETTI STYLES
+   ============================================ */
+
+.confetti {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.confetti-red { background: #ff6b6b; }
+.confetti-pink { background: #ffb8d0; }
+.confetti-rose { background: #ff85a2; }
+.confetti-crimson { background: #dc143c; }
+.confetti-hot-pink { background: #ff477e; }
+.confetti-light-pink { background: #ffc4dd; }
+
+/* ============================================
+   PARTICLE SYSTEM
+   ============================================ */
+
+/* HEART PARTICLES ❤️ */
+.particle {
+  position: absolute;
+  pointer-events: none;
+  font-size: 14px;
+  animation: float-up 6s linear infinite;
+}
+
+/* add heart shape */
+.particle::before {
+  content: "❤️";
+  display: block;
+}
+
+
+.particle-glow {
+  box-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+}
+
+/* ============================================
+   LIGHTBOX EFFECTS
+   ============================================ */
+
+.lightbox-overlay {
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+/* ============================================
+   HOVER EFFECTS
+   ============================================ */
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(255, 107, 157, 0.3);
+}
+
+.hover-glow {
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(255, 107, 157, 0.5);
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* ============================================
+   TILT EFFECT
+   ============================================ */
+
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+}
+
+.tilt-card-content {
+  transform: translateZ(50px);
+}
+
+/* ============================================
+   RIPPLE EFFECT
+   ============================================ */
+
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.3) 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.ripple:active::after {
+  transform: scale(0, 0);
+  opacity: 0.3;
+  transition: 0s;
+}
+
+/* extra floating hearts */
+.floating-heart {
+  position: absolute;
+  font-size: 12px;
+  animation: float-up 5s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+.floating-heart::before {
+  content: "💖";
+}

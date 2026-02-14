@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Heart, MessageCircle, Calendar, Star, Sparkles, Clock, MapPin } from 'lucide-react';
 import { useInView, useParallax } from '@/hooks/useScrollProgress';
 import { useTilt } from '@/hooks/useMousePosition';
-import firstChat from '@/assets/firstchat.jpg';
+import firstChat from '@/assets/firstchat.png';
 import firstMeet from '@/assets/firstmeet.jpg';
 import firstDate from '@/assets/firstdate.jpg';
 import specialMoment from '@/assets/specialmoment.jpg';
